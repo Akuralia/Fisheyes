@@ -8,7 +8,7 @@ export function photographerTemplate(data) {
         link.setAttribute("aria-label", `Voir la page de ${data.name}`);
         const img = document.createElement("img");
         img.setAttribute("src", picture);
-        img.setAttribute("alt", "");
+        img.setAttribute("alt", `Voir la page de ${data.name}`);
         const h2 = document.createElement("h2");
         h2.textContent = data.name;
         const infos = document.createElement("div");

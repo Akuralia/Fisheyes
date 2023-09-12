@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -24,16 +23,16 @@
             </header>
             <main id="main">
                 <div class="photographer-banner">
-                    <button class="contact-button" onclick="displayModal()">
+                    <button class="contact-button" onclick="displayContactModal()">
                         Contactez-moi
                     </button>
                 </div>
                 <div id="photographer-content">
                     <label for="filter">Trier par</label>
                     <select name="filter" id="filter">
-                        <option value="popularity">Popularité</option>
-                        <option value="date">Date</option>
-                        <option value="title">Titre</option>
+                        <option value="popularity" aria-label="popularité">Popularité</option>
+                        <option value="date" aria-label="date">Date</option>
+                        <option value="title" aria-label="titre">Titre</option>
                     </select>
                     <div id="photographer-pictures">
                         <!-- Photo des photographes -->
@@ -44,12 +43,12 @@
 
             <dialog id="media-modal" aria-hidden="true">
                 <div class="carroussel">
-                    <i class="fa-solid fa-chevron-left prev-btn"></i>
+                    <i class="fa-solid fa-chevron-left prev-btn" aria-label="précédent"></i>
                     <figure id="media-slide">
                     </figure>
                     <div class="next">
-                        <i class="fa-solid fa-xmark"></i>
-                        <i class="fa-solid fa-chevron-right next-btn"></i>
+                        <i class="fa-solid fa-xmark x-btn"aria-label="fermer"></i>
+                        <i class="fa-solid fa-chevron-right next-btn" aria-label="suivant"></i>
                     </div>
                 </div>
             </dialog>
@@ -60,13 +59,20 @@
                         <h2>Contactez-moi</h2>
                         <img
                             src="assets/icons/close.svg"
-                            onclick="closeModal()"
+                            onclick="closeContactModal()"
+                            aria-label="Femer le formulaire de contact"
                         />
                     </header>
                     <form>
-                        <div>
+                        <div class="input">
                             <label>Prénom</label>
-                            <input />
+                            <input type="text" />
+                            <label>Nom</label>
+                            <input type="text"/>
+                            <label>Email</label>
+                            <input type="email"/>
+                            <label>Votre Message</label>
+                            <input class="input-msg" type="text"/>
                         </div>
                         <button class="contact_button" aria-label="Envoyer">
                             Envoyer
@@ -83,70 +89,5 @@
         </div>
     </body>
 </html>
-=======
-<!DOCTYPE html>
-<html>
-    <head>
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/png" href="assets/favicon.png" />
-        <link
-            href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
-            rel="stylesheet"
-        />
-        <title>Fisheye - photographe</title>
-    </head>
-    <body>
-        <div class="block_page">
-        <header class="header-photographer">
-            <a href="/index.html" aria-label="Fisheye Home Page"
-                ><img
-                    src="assets/images/logo.png"
-                    class="logo"
-                    alt="Logo Fisheye"
-                />
-            </a>
-        </header>
-        <main id="main">
-            <div class="photographer-banner">
-                <button class="contact_button" onclick="displayModal()">
-                    Contactez-moi
-                </button>
-            </div>
-            <div id="photographer-content">
-                <label for="filter">Trier par</label>
-                <select name="filter" id="filter">
-                    <option value="popularity">Popularité</option>
-                    <option value="date">Date</option>
-                    <option value="title">Titre</option>
-                </select>
-                <div id="photographer-pictures">
-                    <!-- Photo des photographes -->
-                </div>
-            </div>
-        </main>
-        <div id="contact_modal">
-            <div class="modal">
-                <header>
-                    <h2>Contactez-moi</h2>
-                    <img src="assets/icons/close.svg" onclick="closeModal()" />
-                </header>
-                <form>
-                    <div>
-                        <label>Prénom</label>
-                        <input />
-                    </div>
-                    <button class="contact_button" aria-label="Envoyer">
-                        Envoyer
-                    </button>
-                </form>
-            </div>
-        </div>
-        <script src="/scripts/pages/photographer.js" type="module"></script>
-        <script src="/scripts/utils/contactForm.js"></script>
-        <script src="https://kit.fontawesome.com/3c56dfb362.js" crossorigin="anonymous"></script>
 
-    </div>
-    </body>
-</html>
->>>>>>> main
+

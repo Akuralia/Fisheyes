@@ -20,7 +20,7 @@ const mediaModal = document.getElementById("media-modal");
 const mediaSlides = document.getElementById("media-slide");
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
-
+const closeModal = document.querySelector(".x-btn")
 /**
  * Function for the initialisation of the page
  */
@@ -133,7 +133,8 @@ export function openModal(e) {
 /**
  * Function to close the modal
  */
-function closeModal() {
+
+function closeMediaModal() {
     mediaModal.style.display = "none";
 }
 
@@ -166,6 +167,21 @@ function showSlide(index) {
         const nextIndex = (currentIndex + 1) % images.length;
         showSlide(nextIndex);
     });
+
+    closeModal.addEventListener("click", closeMediaModal)
+
+    document.addEventListener("keydown", (e) => {
+        if(mediaModal.getAttribute("aria-hidden") === "false"){
+            if(e.key === '37'){
+            const prevIndex = (currentIndex - 1);
+            showSlide(prevIndex);
+            } else if (e.key === '39'){
+                const nextIndex = (currentIndex + 1) % images.length;
+                showSlide(nextIndex);
+            }
+        }
+    });
 }
+
 
 init();
